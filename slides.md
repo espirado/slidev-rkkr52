@@ -63,19 +63,17 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 
 <img src="/images/mwfs.png" class="m-5 h-60 rounded shadow" />
 </v-clicks>
+---
 
-
-
-
-
+# Scalability
 
 <v-clicks>
- 
-# Scalability
+
   - Time and cost of analysis tradeof
   - How your system scales with number of parallel tasks
   - How well your system distributes tasks i.e allocate RAM and Core with requirements of tasks
- 
+
+  <img src="/images/aws.png" class="m-40 h-40 rounded shadow" />
 
 </v-clicks>
 
