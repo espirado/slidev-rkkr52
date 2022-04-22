@@ -55,36 +55,33 @@ Efficient  orchestrating computational pipelines for complex analysis  while han
 
 <v-clicks>
 Automating computational analysis by linkiing together Data mananipulation/processing tasks into a cohesive pipeline
+
+* Genomic data has turned into a large scale data generation 
+
+* Processing the ever increasing data is driving the evolution of software to automate and parallelize analysis on hpc environments
+
+
+<img src="/images/mwfs.png" class="m-5 h-60 rounded shadow" />
 </v-clicks>
 
 
-<v-clicks>
 
-  
-* Scalability
+
+
+
+<v-clicks>
+ 
+# Scalability
   - Time and cost of analysis tradeof
   - How your system scales with number of parallel tasks
   - How well your system distributes tasks i.e allocate RAM and Core with requirements of tasks
-* 
-  - How your system handles reliability
-    - Recovery and restart from failure
-    - Hardware or network failures
-    - Detecting failures from logs easily
-    - Data loss 
-       - Data streaming piping data to downstream analysis rather than saving on a file
-* 
-  - Reconstruct the same workflow 
-     - use of package  managers
-     - Container technologies  
-* Interoperbilty
-* Ease of development
+ 
 
 </v-clicks>
 
 ---
 
 #  Modularity
- 
 
 <v-clicks>
 
@@ -99,16 +96,13 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 # Robustness
 
 <v-clicks>
-
-- Cloud Development Kit
-- Define cloud resources using code
-- Not a DSL, same language that you might be familiar with
-- CDK Supports
-  - TypeScript
-  - JavaScript
-  - Python
-  - .net
-  - Go <sup><sup>in dev preview</sup></sup>
+ 
+* How your system handles reliability
+   - Recovery and restart from failure
+    - Hardware or network failures
+    - Detecting failures from logs easily
+    - Data loss 
+    - Data streaming piping data to downstream analysis rather than saving on a file
 
 </v-clicks>
 
@@ -118,21 +112,14 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 
 <v-clicks>
 
-* App
-  * Describes the entire infrastructure to be built
-  * Collection of stacks
-
-* Stack
-  * Collection of constructs
-
-* Construct
-  * Heart and soul of CDK
-  * Represents an abstraction of CloudFormation Resources
+ * Reconstruct the same workflow 
+     - use of package  managers
+     - Container technologies 
 
 </v-clicks>
 
 ---
-clicks: 2
+
 ---
 
 # Constructs
