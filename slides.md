@@ -61,7 +61,6 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 * Processing the ever increasing data is driving the evolution of software to automate and parallelize analysis on hpc environments
 
 
-<img src="/images/mwfs.png" class="m-5 h-60 rounded shadow" />
 </v-clicks>
 ---
 
@@ -73,7 +72,6 @@ Automating computational analysis by linkiing together Data mananipulation/proce
   - How your system scales with number of parallel tasks
   - How well your system distributes tasks i.e allocate RAM and Core with requirements of tasks
 
-  <img src="/images/aws.png" class="m-40 h-40 rounded shadow" />
 
 </v-clicks>
 
