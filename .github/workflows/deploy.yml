@@ -17,4 +17,4 @@ jobs:
         with:
           build_dir: dist
         env:
-          PAGE_TOKEN: ${{ secrets.PAGE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAGE_TOKEN }}
