@@ -60,6 +60,8 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 
 * Processing the ever increasing data is driving the evolution of software to automate and parallelize analysis on hpc environments
 
+<img src="https://drive.google.com/uc?id=1DNjzSsGEJCHFMldLjUE6C8FY_nmgWn2K" class="m-5 h-60 rounded shadow" /> 
+
 
 </v-clicks>
 ---
@@ -76,7 +78,7 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 
 
 </v-clicks>
----   
+---
 
 #  Modularity
 
@@ -86,7 +88,7 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 - Perform different analysis without refactoring code
 - Checkpoints/breakpoints to restart your workflow at any stage of the run
 
-<img src="https://drive.google.com/uc?id=1DNjzSsGEJCHFMldLjUE6C8FY_nmgWn2K" class="m-15 h-70 rounded shadow" />
+<img src="https://drive.google.com/uc?id=1BITmj8SBpyR2BhZFgPlBUkfuX-TxAZ7H" class="m-15 h-70 rounded shadow" />
 
 
 </v-clicks>
@@ -120,6 +122,7 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 <img src="https://drive.google.com/uc?id=1oeWxb5C6PYleHBgZNI9LYAogcvXFBhBZ" class="m-5 h-60 rounded shadow" />  
 
 </v-clicks>
+
 
 ---
 
@@ -172,7 +175,7 @@ process.$quant.time = '4.5 h'
 * The Job queue definition allows you to bind a specific task to one or more Compute Environments
 * the Job definition is a template for one or more jobs in your workload.
 * Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container
-<img src="https://drive.google.com/uc?id=1BITmj8SBpyR2BhZFgPlBUkfuX-TxAZ7H" class="m-5 h-60 rounded shadow" /> 
+<img src="https://drive.google.com/uc?id=1ImZtMYo6HmSIsTOQ9jIy7a9U402SQfop" class="m-5 h-60 rounded shadow" /> 
 
 </v-clicks>
 
