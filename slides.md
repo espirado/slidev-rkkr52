@@ -231,3 +231,7 @@ Sample Implementation pipeline
 
 * [GitHub repo (slides + code)](https://github.com/espirado/slidev-rkkr52)
 * Catch me on [Twitter](https://twitter.com/AEspirado), [GitHub](https://github.com/espirado), [LinkedIn](https://www.linkedin.com/in/andrew-espira-20ab3a82/) - Espira
+
+---
+download: true
+---
