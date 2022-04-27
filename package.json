@@ -9,5 +9,22 @@
     "@slidev/cli": "latest",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest"
-  }
+  },
+  "name": "slidev-rkkr52",
+  "description": "<!-- Thank you to BHKi and OpenScienceKE . This is my first talk and am happy to share how cloud environments can help accelerate your workflows -->",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "playwright": "^1.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/espirado/slidev-rkkr52.git"
+  },
+  "author": "espirado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/espirado/slidev-rkkr52/issues"
+  },
+  "homepage": "https://github.com/espirado/slidev-rkkr52#readme"
 }
