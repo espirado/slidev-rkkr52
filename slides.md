@@ -45,7 +45,7 @@ Efficient  orchestrating computational pipelines for complex analysis  while han
 
 # Some notes
 
-* Feel to reach out and ask any question
+* Feel free to reach out and ask any question
 * Slides & code on GitHub
 
 ---
@@ -71,11 +71,12 @@ Automating computational analysis by linkiing together Data mananipulation/proce
   - Time and cost of analysis tradeof
   - How your system scales with number of parallel tasks
   - How well your system distributes tasks i.e allocate RAM and Core with requirements of tasks
+<img src="https://drive.google.com/uc?id=11dxJlQrwV6juCF469DCB1-lR7ft0ilsN" class="m-10 h-70 rounded shadow" />
+  
 
 
 </v-clicks>
-
----
+---   
 
 #  Modularity
 
@@ -84,6 +85,9 @@ Automating computational analysis by linkiing together Data mananipulation/proce
 - Build a library of reusable modules
 - Perform different analysis without refactoring code
 - Checkpoints/breakpoints to restart your workflow at any stage of the run
+
+<img src="https://drive.google.com/uc?id=1DNjzSsGEJCHFMldLjUE6C8FY_nmgWn2K" class="m-15 h-70 rounded shadow" />
+
 
 </v-clicks>
 
@@ -100,6 +104,8 @@ Automating computational analysis by linkiing together Data mananipulation/proce
     - Data loss 
     - Data streaming piping data to downstream analysis rather than saving on a file
 
+    <img src="https://drive.google.com/uc?id=1DPPM4iSVuCJ8aHR1XJWXXEs703DS77OA" class="m-5 h-60 rounded shadow" />
+
 </v-clicks>
 
 ---
@@ -111,48 +117,46 @@ Automating computational analysis by linkiing together Data mananipulation/proce
  * Reconstruct the same workflow 
      - use of package  managers
      - Container technologies 
+<img src="https://drive.google.com/uc?id=1oeWxb5C6PYleHBgZNI9LYAogcvXFBhBZ" class="m-5 h-60 rounded shadow" />  
 
 </v-clicks>
 
 ---
 
----
 
-# Constructs
+# Nextflow sample batch
 
 <div grid="~ cols-2 gap-x-4">
 
 ```ts {1-10|12-15|17-18}
 // L1 construct
-const bucket = new s3.CfnBucket(this, "MyCfnBucket", {
-  bucketName: "MyBucket",
-  corsConfiguration: {
-    corsRules: [{
-          allowedOrigins: ["*"],
-          allowedMethods: ["GET"]
-    }]
-  }
-});
+process.executor = 'awsbatch'
+process.queue = 'my-batch-queue'
+process.container = your-org/your-docker:image
+aws.region = 'eu-west-1'
+aws.accessKey = 'xxx'
+aws.secretKey = 'yyy'
 
 // L2 construct 
-new s3.Bucket(this, 'MyCdkBucket', {
-  versioned: true
-});
+executor = 'crg'
+singularity.enabled = true
+process.container = "docker://nextflow/rnaseq-nf"
+process.queue = 'cn-el7'
+process.time = '90 min'
+process.$quant.time = '4.5 h'
 
-// L3 construct
-new NotifyingBucket(this, 'MyNotifyingBucket');
+
 ```
 
 <div>
 
 <v-clicks fade :at="0">
 
-- L1: Raw CFN Resources
-  - Represents a CFN resource
-- L2: Curated constructs
-  - Created by the CDK team to create common objects
-- L3: Pattern constructs
-  - Collections of constructs that define applications/org patterns
+- L1: Define compute environments
+  - defining the required computing resources and associate it to a Job Queue.
+- L2:  cluster deployment
+  - Defining the deployment configuration for the task to run
+
 
 </v-clicks>
 
@@ -164,144 +168,58 @@ new NotifyingBucket(this, 'MyNotifyingBucket');
 
 <v-clicks>
 
-* CloudFormation is still the foundation
-* Apps, Stacks, Constructs defined in programming languages
-* CDK Toolkit synthesizes these to CloudFormation teamplates
+* The Compute Environment allows you to define the computing resources required for a specific workload 
+* The Job queue definition allows you to bind a specific task to one or more Compute Environments
+* the Job definition is a template for one or more jobs in your workload.
+* Job binds a Job definition to a specific Job queue and allows you to specify the actual task command to be executed in the container
+<img src="https://drive.google.com/uc?id=1BITmj8SBpyR2BhZFgPlBUkfuX-TxAZ7H" class="m-5 h-60 rounded shadow" /> 
 
 </v-clicks>
 
 ---
 
-# Behind the scenes - jsii
+# Behind the scenes - Compute
 
 <v-clicks>
 
-* [jsii](https://aws.github.io/jsii/)
-* Allows code in any language to interact with JavaScript classes
-* Library bindings include the original JS code
+* The job input and output data management is delegated to the user
+* This means that if you only use Batch API/tools you will need to take care to stage the input data from a S3 bucket (or a different source) and upload the results to a persistent storage location.
+
+<img src="https://drive.google.com/uc?id=18MOHfT-WtdnA9AHFpSW9G6v75DcRIdyn" class="m-5 h-60 rounded shadow" /> 
+
 
 </v-clicks>
 
 
 ---
 
-# Behind the scenes - jsii-rosetta
+# Overall ojective
 
 <v-clicks>
 
-* How are the bindings generated?
-* Enter [jsii-rosetta](https://github.com/aws/jsii/tree/main/packages/jsii-rosetta) 
-* Transpiles code snippets from TypeScript to other jsii languages
-* jsii makes CDK possible! (and The CDK Book!)
+* Easy to use workflow
+* Researcher/scientist abstraction from the worry of infrastucture and data management
+* On demand and cost Efficient
+* Run anywhere 
+<img src="https://drive.google.com/uc?id=1CCht0EbJMkuSP2PAKNi9b7awb_LkBQCN" class="m-5 h-60 rounded shadow" /> 
+
 
 </v-clicks>
 
----
 
-# Assets
+# Sample Implementation pipeline
 
-<v-clicks>
-
-* What about the files required to support/run?
-* Lambda Handlers, Docker Images, User data
-* Where to store these?
-* Assets handles these
-
-</v-clicks>
-
----
-
-# Bootstrap
-
-<v-clicks>
-
-* Provisioning of initial resources required by CDK
-* When to bootstrap?
-  * Asssets
-  * CFN Templates > 50kB
-  * CDK Pipelines
-
-</v-clicks>
-
----
-clicks: 3
----
-# Demo - Install CDK + Getting started
-
-<div grid="~ cols-2 gap-x-4">
-
-```ts {1|2|4|5-9}
-npm install typescript
-npm install aws-cdk 
-
-npx cdk init app --language typescript
-
-const bucket = new s3.Bucket(this, 'AwsUgNairobi', {
-  bucketName: 'awsugnairobi-cdk-demo',
-  versioned: true
-});
-```
-
-<div>
-
-<v-clicks fade :at="0">
-
-* Install Typescript
-* Install CDK Toolkit
-* Initialize a new app
-* Create a new bucket
-
-</v-clicks>
-</div>
-</div>
-
----
-clicks: 3
----
-# Construct object signature
-
-<div grid="~ cols-2 gap-x-4">
-
-```ts {1|2|3|5-9}
-const bucket = new s3.Bucket(
-    this, 
-    'AwsUgNairobi', 
-    { 
-      bucketName: 'awsugnairobi-cdk-demo',
-      versioned: true
-    }
-  );
-```
-
-<div>
-<v-clicks fade :at="0">
-
-* create a new Bucket
-* scope
-* id: logical id of the bucket, used to uniquely identify 
-* props
-
-</v-clicks>
-</div>
-</div>
-
----
-
-# Live demo/coding.. 
-
-* [code at](https://github.com/SathyaBhat/talks-slides/tree/main/infra-as-code-awsug-nairobi/infra)
+* [code at](https://github.com/aws-samples/aws-genomics-nextflow-workshop)
 
 ---
 
 # What next?
 
 * Interested in learning more? check:
-  * Do the [AWS CDK Workshop](https://cdkworkshop.com/)
-  * Watch Matt Martz's video course on [CDK Crash Course](https://www.youtube.com/watch?v=T-H4nJQyMig)
-  * (self plug) Read [The CDK Book](https://thecdkbook.com)
-* Check out the [Construct Hub](https://constructs.dev/)
-* Experiment! 
-* Talk about your experiments at [The CDK Day](https://www.cdkday.com/)
+  * Read [AWs Genomics whitepaper](https://aws.amazon.com/blogs/industries/whitepaper-genomics-data-transfer-analytics-and-machine-learning-using-aws-services/)
+  * AWS  workshop on [Genomics ](https://catalog.us-east-1.prod.workshops.aws/workshops/8213ad51-878f-493b-8e5a-fbea22c4360c/en-US))
+  * 
+
 
 ---
 
