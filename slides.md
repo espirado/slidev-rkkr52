@@ -218,15 +218,12 @@ process.$quant.time = '4.5 h'
 * Interested in learning more? check:
   * Read [AWs Genomics whitepaper](https://aws.amazon.com/blogs/industries/whitepaper-genomics-data-transfer-analytics-and-machine-learning-using-aws-services/)
   * AWS  workshop on [Genomics ](https://catalog.us-east-1.prod.workshops.aws/workshops/8213ad51-878f-493b-8e5a-fbea22c4360c/en-US))
-  * 
+  
 
 
 ---
 
 # Q&A, Links
 
-* [GitHub repo (slides + code)](https://github.com/SathyaBhat/talks-slides)
-* [AWS CDK](https://aws.amazon.com/cdk)
-* [The CDK Book](https://www.thecdkbook.com/)
-* [The CDK Day](https://www.cdkday.com/)
-* Catch me on [Twitter](https://twitter.com/sathyabhat), [GitHub](https://github.com/sathyabhat), [LinkedIn](https://www.linkedin.com/in/sathyabhat/) - sathyabhat
+* [GitHub repo (slides + code)](https://github.com/espirado/slidev-rkkr52)
+* Catch me on [Twitter](https://twitter.com/AEspirado), [GitHub](https://github.com/espirado), [LinkedIn](https://www.linkedin.com/in/andrew-espira-20ab3a82/) - Espira
