@@ -201,15 +201,16 @@ process.$quant.time = '4.5 h'
 * Researcher/scientist abstraction from the worry of infrastucture and data management
 * On demand and cost Efficient
 * Run anywhere 
-<img src="https://drive.google.com/uc?id=1CCht0EbJMkuSP2PAKNi9b7awb_LkBQCN" class="m-5 h-60 rounded shadow" /> 
+<img src="https://drive.google.com/uc?id=1CCht0EbJMkuSP2PAKNi9b7awb_LkBQCN" class="m-5 h-55 rounded shadow" /> 
 
+Sample Implementation pipeline
+
+* [code at](https://github.com/aws-samples/aws-genomics-nextflow-workshop)
 
 </v-clicks>
 
 
-# Sample Implementation pipeline
 
-* [code at](https://github.com/aws-samples/aws-genomics-nextflow-workshop)
 
 ---
 
