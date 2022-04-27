@@ -196,7 +196,7 @@ process.$quant.time = '4.5 h'
 
 ---
 
-# Overall ojective
+# Overall objective
 
 <v-clicks>
 
